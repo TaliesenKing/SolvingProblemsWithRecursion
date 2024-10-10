@@ -14,10 +14,19 @@ iceCreamShop([], 'honey lavender'); // false
 
 
 function iceCreamShop(flavors, favorite) {
-  // Your code here 
+  //lets check if the shops empty
+  if (flavors.length === 0) {
+    return false;
+  }
+  //now lets see if theyve got the customers flavor in the first element, if not try again with the next
+  if (flavors[0] === favorite) {
+    return true
+  } //and if it doesnt try again with the next element 
+  return iceCreamShop(flavors.slice(1), favorite);
+  //this will try it again but excludes the first element each time
 }
 
-
+console.log(iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea')); // returns true 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = iceCreamShop;

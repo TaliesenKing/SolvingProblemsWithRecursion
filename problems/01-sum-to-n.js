@@ -13,8 +13,15 @@ sumToN(-8)  // returns null
 
 
 function sumToN(n) {
-  // Your code here 
+  if (n < 0) { //this will weed out edge cases
+      return null;
+  }
+  if (n === 0) { //once n reaches 0
+      return 0; //this will be our base case
+  }
+  return n + sumToN(n - 1); // this will be our recursive case
 }
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
